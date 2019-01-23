@@ -1,0 +1,29 @@
+public class MassUnit  
+{  
+    public string MassUnits { get; set; }  
+} 
+
+public class MassList : List<MassUnit>  
+{  
+    public MassList()  
+    {  
+        Add(new MassUnit { MassUnits = "Grams" });  
+        Add(new MassUnit { MassUnits = "Kilograms" });  
+        Add(new MassUnit { MassUnits = "Metric tonnes" });  
+        Add(new MassUnit { MassUnits = "Short ton" });  
+        Add(new MassUnit { MassUnits = "Long ton" });  
+        Add(new MassUnit { MassUnits = "Pounds" });  
+        Add(new MassUnit { MassUnits = "Ounces" });  
+    }  
+} 
+
+public Mass()  
+{  
+    InitializeComponent();  
+    FillMassBox();  
+}  
+private void FillMassBox()  
+{  
+    lstFrom.ItemsSource = new MassList();  
+    lstTo.ItemsSource = new MassList();  
+}
