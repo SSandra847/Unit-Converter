@@ -1,0 +1,80 @@
+private void lstTo_SelectionChanged(object sender, SelectionChangedEventArgs e)  
+{  
+    MainGrid.Visibility = Visibility.Visible;  
+    ToGrid.Visibility = Visibility.Collapsed;  
+    if (txtFrom.Text == "")  
+    {  
+        txtError.Visibility = Visibility.Visible;  
+    }  
+    else  
+    {  
+        txtError.Visibility = Visibility.Collapsed;  
+        if (lstTo.SelectedIndex.Equals(0))  
+        {  
+            btnLstTo.Content = "Grams";  
+            //txtLstTo.Text = "Millimeters";  
+            if (btnLstFrom.Content.Equals("Grams"))  
+            {  
+                txtResult.Text = txtFrom.Text;  
+            }  
+            if (btnLstFrom.Content.Equals("Kilograms"))  
+            {  
+                txtResult.Text = Convert.ToString(Convert.ToDouble(txtFrom.Text) * 1000);  
+            }  
+            if (btnLstFrom.Content.Equals("Metric tonnes"))  
+            {  
+                txtResult.Text = Convert.ToString(Convert.ToDouble(txtFrom.Text) * 1000000);  
+            }  
+            if (btnLstFrom.Content.Equals("Short ton"))  
+            {  
+                txtResult.Text = Convert.ToString(Convert.ToDouble(txtFrom.Text) * 907200);  
+            }  
+            if (btnLstFrom.Content.Equals("Long ton"))  
+            {  
+                txtResult.Text = Convert.ToString(Convert.ToDouble(txtFrom.Text) * 1016000);  
+            }  
+            if (btnLstFrom.Content.Equals("Pounds"))  
+            {  
+                txtResult.Text = Convert.ToString(Convert.ToDouble(txtFrom.Text) * 453.6);  
+            }  
+            if (btnLstFrom.Content.Equals("Ounces"))  
+            {  
+                txtResult.Text = Convert.ToString(Convert.ToDouble(txtFrom.Text) * 28);  
+            }  
+        }  
+        // Kilograms //  
+        if (lstTo.SelectedIndex.Equals(1))  
+        {  
+            btnLstTo.Content = "Kilograms";  
+            //txtLstTo.Text = "Millimeters";  
+            if (btnLstFrom.Content.Equals("Grams"))  
+            {  
+                txtResult.Text = Convert.ToString(Convert.ToDouble(txtFrom.Text) * 0.001);  
+            }  
+            if (btnLstFrom.Content.Equals("Kilograms"))  
+            {  
+                txtResult.Text = txtFrom.Text;  
+            }  
+            if (btnLstFrom.Content.Equals("Metric tonnes"))  
+            {  
+                txtResult.Text = Convert.ToString(Convert.ToDouble(txtFrom.Text) * 1000);  
+            }  
+            if (btnLstFrom.Content.Equals("Short ton"))  
+            {  
+                txtResult.Text = Convert.ToString(Convert.ToDouble(txtFrom.Text) * 907.2);  
+            }  
+            if (btnLstFrom.Content.Equals("Long ton"))  
+            {  
+                txtResult.Text = Convert.ToString(Convert.ToDouble(txtFrom.Text) * 1016);  
+            }  
+            if (btnLstFrom.Content.Equals("Pounds"))  
+            {  
+                txtResult.Text = Convert.ToString(Convert.ToDouble(txtFrom.Text) * 0.4536);  
+            }  
+            if (btnLstFrom.Content.Equals("Ounces"))  
+            {  
+                txtResult.Text = Convert.ToString(Convert.ToDouble(txtFrom.Text) * 0.02835);  
+            }  
+        }  
+    }  
+}
